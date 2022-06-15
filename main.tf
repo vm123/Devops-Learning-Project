@@ -46,9 +46,16 @@ resource "azurerm_mssql_database" "heart8rate" {
   server_id = "/subscriptions/5ec6ddd8-60a2-4186-9e32-59fbeab53734/resourceGroups/DataBase_Resource_Group/providers/Microsoft.Sql/servers/sqlserver84209"
 }
 
-resource "azurerm_mssql_firewall_rule" "firewallrule" {
-  name             = "firewallrule"
+resource "azurerm_mssql_firewall_rule" "firewallruleVijay" {  #firewall to allow all IP address from local address
+  name             = "firewallruleVijay"
   server_id        = "/subscriptions/5ec6ddd8-60a2-4186-9e32-59fbeab53734/resourceGroups/DataBase_Resource_Group/providers/Microsoft.Sql/servers/sqlserver84209"
   start_ip_address = "167.96.157.56"
   end_ip_address   = "167.96.157.56"
+}
+
+resource "azurerm_mssql_firewall_rule" "firewallruleAzure" {  #firewall to allow all IP address from Azure Services
+  name             = "firewallruleAzure"
+  server_id        = "/subscriptions/5ec6ddd8-60a2-4186-9e32-59fbeab53734/resourceGroups/DataBase_Resource_Group/providers/Microsoft.Sql/servers/sqlserver84209"
+  start_ip_address = "0.0.0.0"
+  end_ip_address   = "0.0.0.0"
 }
