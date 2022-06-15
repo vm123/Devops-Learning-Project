@@ -50,5 +50,5 @@ resource "azurerm_mssql_firewall_rule" "firewallrule" {
   name             = "firewallrule"
   server_id        = "/subscriptions/5ec6ddd8-60a2-4186-9e32-59fbeab53734/resourceGroups/DataBase_Resource_Group/providers/Microsoft.Sql/servers/sqlserver84209"
   start_ip_address = "167.96.157.56"
-  end_ip_address   = "192.168.0.14."
+  end_ip_address   = "167.96.157.56"
 }
